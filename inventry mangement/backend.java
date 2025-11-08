@@ -10,12 +10,12 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
-// ✅ Replace with your MongoDB connection string
+//  Replace with your MongoDB connection string
 mongoose.connect('mongodb://127.0.0.1:27017/inventoryDB', {
   useNewUrlParser: true,
   useUnifiedTopology: true
-}).then(() => console.log('✅ MongoDB Connected'))
-  .catch(err => console.error('❌ MongoDB connection error:', err));
+}).then(() => console.log(' MongoDB Connected'))
+  .catch(err => console.error(' MongoDB connection error:', err));
 
 // Schema & Model
 const itemSchema = new mongoose.Schema({
@@ -28,7 +28,7 @@ const Item = mongoose.model('Item', itemSchema);
 
 // Routes
 
-// ➕ Add a new item
+//  Add a new item
 app.post('/api/items', async (req, res) => {
   try {
     const { name, quantity, price } = req.body;
@@ -40,13 +40,13 @@ app.post('/api/items', async (req, res) => {
   }
 });
 
-// 📋 Get all items
+//  Get all items
 app.get('/api/items', async (req, res) => {
   const items = await Item.find();
   res.json(items);
 });
 
-// ✏️ Update an item
+//  Update an item
 app.put('/api/items/:id', async (req, res) => {
   try {
     const updatedItem = await Item.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -56,7 +56,7 @@ app.put('/api/items/:id', async (req, res) => {
   }
 });
 
-// ❌ Delete an item
+//  Delete an item
 app.delete('/api/items/:id', async (req, res) => {
   try {
     await Item.findByIdAndDelete(req.params.id);
@@ -66,7 +66,7 @@ app.delete('/api/items/:id', async (req, res) => {
   }
 });
 
-// 🧮 Get total inventory value
+//  Get total inventory value
 app.get('/api/total', async (req, res) => {
   const items = await Item.find();
   const totalValue = items.reduce((sum, i) => sum + i.quantity * i.price, 0);
@@ -76,3 +76,4 @@ app.get('/api/total', async (req, res) => {
 // Start server
 const PORT = 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on http://localhost:${PORT}`));
+
