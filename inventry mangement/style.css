@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f5f6fa;
+  color: #333;
+}
+
+header {
+  background: #2f3640;
+  color: #fff;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  background: #40739e;
+  flex-wrap: wrap;
+}
+
+nav button {
+  background: transparent;
+  color: white;
+  border: none;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-size: 16px;
+}
+
+nav button:hover,
+nav button.active {
+  background: #273c75;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  border-bottom: 2px solid #718093;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background: #44bd32;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+button:hover {
+  background: #4cd137;
+}
+
+.delete-btn {
+  background: #c23616;
+}
+
+.delete-btn:hover {
+  background: #e84118;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background: #718093;
+  color: white;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #2f3640;
+  color: #ccc;
+  margin-top: 2rem;
+}
+
+@media (max-width: 600px) {
+  nav {
+    flex-direction: column;
+  }
+
+  main {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}
